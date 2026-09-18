@@ -30,6 +30,8 @@ class OrderLineItem {
   final String nameEn;
   final String? colorNameAr;
   final String? colorNameEn;
+  final String? productId;
+  final String? variantId;
   final num unitPrice;
   final int quantity;
   final num lineTotal;
@@ -42,6 +44,8 @@ class OrderLineItem {
     required this.lineTotal,
     this.colorNameAr,
     this.colorNameEn,
+    this.productId,
+    this.variantId,
   });
 
   factory OrderLineItem.fromJson(Map<String, dynamic> json) => OrderLineItem(
@@ -49,6 +53,8 @@ class OrderLineItem {
         nameEn: json['nameEn'] as String,
         colorNameAr: json['colorNameAr'] as String?,
         colorNameEn: json['colorNameEn'] as String?,
+        productId: json['productId'] as String?,
+        variantId: json['variantId'] as String?,
         unitPrice: json['unitPrice'] as num,
         quantity: json['quantity'] as int,
         lineTotal: json['lineTotal'] as num,

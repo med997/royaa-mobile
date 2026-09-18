@@ -16,6 +16,7 @@ class LoginScreen extends ConsumerStatefulWidget {
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _mobile = TextEditingController();
   final _password = TextEditingController();
+  bool _obscure = true;
   bool _loading = false;
 
   Future<void> _submit() async {
@@ -36,33 +37,71 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(28),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              const SizedBox(height: 24),
               Container(
-                width: 64,
-                height: 64,
-                margin: const EdgeInsets.only(bottom: 24),
+                width: 60,
+                height: 60,
                 decoration: BoxDecoration(color: AppColors.ink, borderRadius: BorderRadius.circular(20)),
                 alignment: Alignment.center,
-                child: const Text('◉', style: TextStyle(color: Colors.white, fontSize: 28)),
+                child: const Text('◉', style: TextStyle(color: Colors.white, fontSize: 26)),
               ),
-              Text('app_name'.tr(), style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w800)),
-              const SizedBox(height: 32),
-              TextField(controller: _mobile, keyboardType: TextInputType.phone, decoration: InputDecoration(labelText: 'mobile_number'.tr())),
-              const SizedBox(height: 12),
-              TextField(controller: _password, obscureText: true, decoration: InputDecoration(labelText: 'password'.tr())),
               const SizedBox(height: 24),
+              Text('welcome_back'.tr(), style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800)),
+              const SizedBox(height: 8),
+              Text('login_subtitle'.tr(), style: const TextStyle(color: AppColors.muted, fontSize: 13, height: 1.6)),
+              const SizedBox(height: 28),
+              TextField(
+                controller: _mobile,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(prefixIcon: const Icon(Icons.person_outline, size: 20), labelText: 'mobile_number'.tr()),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: _password,
+                obscureText: _obscure,
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.lock_outline, size: 20),
+                  suffixIcon: IconButton(
+                    icon: Icon(_obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined, size: 20),
+                    onPressed: () => setState(() => _obscure = !_obscure),
+                  ),
+                  labelText: 'password'.tr(),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: TextButton(onPressed: () {}, child: Text('forgot_password'.tr())),
+              ),
+              const SizedBox(height: 12),
               FilledButton(
                 onPressed: _loading ? null : _submit,
                 child: _loading
                     ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
                     : Text('login'.tr()),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  Padding(padding: const EdgeInsets.symmetric(horizontal: 10), child: Text('or_continue_with'.tr(), style: const TextStyle(color: AppColors.muted, fontSize: 12))),
+                  const Expanded(child: Divider()),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(child: OutlinedButton(onPressed: () {}, child: const Text('Google'))),
+                  const SizedBox(width: 10),
+                  Expanded(child: OutlinedButton(onPressed: () {}, child: const Text('Apple'))),
+                ],
+              ),
+              const SizedBox(height: 24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

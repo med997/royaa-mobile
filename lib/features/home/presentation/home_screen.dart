@@ -80,7 +80,7 @@ class _HomeHeader extends ConsumerWidget {
           ),
           Row(
             children: [
-              _HeaderIcon(icon: Icons.search, onTap: () {}),
+              _HeaderIcon(icon: Icons.search, onTap: () => context.push('/search')),
               const SizedBox(width: 8),
               _HeaderIcon(
                 icon: Icons.notifications_outlined,
