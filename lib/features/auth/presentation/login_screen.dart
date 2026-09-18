@@ -21,12 +21,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   Future<void> _submit() async {
     setState(() => _loading = true);
     try {
-      await ref.read(authControllerProvider.notifier).login(
-            mobileNo: _mobile.text.trim(),
-            password: _password.text,
-          );
+      await ref
+          .read(authControllerProvider.notifier)
+          .login(mobileNo: _mobile.text.trim(), password: _password.text);
     } catch (e) {
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+      if (mounted)
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(e.toString())));
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -46,28 +47,59 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 width: 64,
                 height: 64,
                 margin: const EdgeInsets.only(bottom: 24),
-                decoration: BoxDecoration(color: AppColors.ink, borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(
+                  color: AppColors.ink,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 alignment: Alignment.center,
-                child: const Text('◉', style: TextStyle(color: Colors.white, fontSize: 28)),
+                child: const Text(
+                  '◉',
+                  style: TextStyle(color: Colors.white, fontSize: 28),
+                ),
               ),
-              Text('app_name'.tr(), style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w800)),
+              Text(
+                'app_name'.tr(),
+                style: Theme.of(context).textTheme.headlineMedium
+                    ?.copyWith(fontWeight: FontWeight.w800),
+              ),
               const SizedBox(height: 32),
-              TextField(controller: _mobile, keyboardType: TextInputType.phone, decoration: InputDecoration(labelText: 'mobile_number'.tr())),
+              TextField(
+                controller: _mobile,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(labelText: 'mobile_number'.tr()),
+              ),
               const SizedBox(height: 12),
-              TextField(controller: _password, obscureText: true, decoration: InputDecoration(labelText: 'password'.tr())),
+              TextField(
+                controller: _password,
+                obscureText: true,
+                decoration: InputDecoration(labelText: 'password'.tr()),
+              ),
               const SizedBox(height: 24),
               FilledButton(
                 onPressed: _loading ? null : _submit,
                 child: _loading
-                    ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                    ? const SizedBox(
+                        width: 22,
+                        height: 22,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.white,
+                        ),
+                      )
                     : Text('login'.tr()),
               ),
               const SizedBox(height: 12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('${'no_account_yet'.tr()} ', style: const TextStyle(color: AppColors.muted)),
-                  GestureDetector(onTap: () => context.push('/register'), child: Text('create_account'.tr())),
+                  Text(
+                    '${'no_account_yet'.tr()} ',
+                    style: const TextStyle(color: AppColors.muted),
+                  ),
+                  GestureDetector(
+                    onTap: () => context.push('/register'),
+                    child: Text('create_account'.tr()),
+                  ),
                 ],
               ),
             ],
