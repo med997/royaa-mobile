@@ -77,5 +77,31 @@
   "stage_delivered": "تم التسليم",
 
   "notifications": "الإشعارات",
-  "no_notifications_yet": "لا توجد إشعارات بعد"
+  "no_notifications_yet": "لا توجد إشعارات بعد",
+
+  "good_morning": "صباح الخير",
+  "view_all": "عرض الكل",
+  "browse_categories": "تصفح الفئات",
+  "brands": "الماركات",
+  "todays_offers": "عروض اليوم",
+  "new_arrivals": "وصل حديثاً",
+  "best_sellers": "الأكثر مبيعاً",
+  "reorder_last": "أعد طلب آخر منتج",
+  "last_purchase": "آخر شراء",
+  "reorder": "إعادة الطلب",
+  "september_collection": "مجموعة سبتمبر",
+  "a_frame_that_speaks": "إطار يعبّر عنك",
+  "discover_now": "اكتشف الآن",
+  "season_offers": "عروض الموسم",
+  "sunglasses_discount_25": "خصم 25% شمسية",
+  "shop_now": "تسوّق الآن",
+  "explore": "استكشف",
+
+  "account": "حسابي",
+  "my_prescriptions": "وصفاتي وقياساتي",
+  "help_and_support": "المساعدة والتواصل",
+  "about_us": "من نحن",
+  "addresses": "العناوين",
+  "logout": "تسجيل الخروج",
+  "coming_soon": "قريباً"
 }

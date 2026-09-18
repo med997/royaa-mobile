@@ -77,5 +77,31 @@
   "stage_delivered": "Delivered",
 
   "notifications": "Notifications",
-  "no_notifications_yet": "No notifications yet"
+  "no_notifications_yet": "No notifications yet",
+
+  "good_morning": "Good morning",
+  "view_all": "View all",
+  "browse_categories": "Browse categories",
+  "brands": "Brands",
+  "todays_offers": "Today's offers",
+  "new_arrivals": "New arrivals",
+  "best_sellers": "Best sellers",
+  "reorder_last": "Reorder your last item",
+  "last_purchase": "Last purchase",
+  "reorder": "Reorder",
+  "september_collection": "September collection",
+  "a_frame_that_speaks": "A frame that speaks for you",
+  "discover_now": "Discover now",
+  "season_offers": "Season offers",
+  "sunglasses_discount_25": "25% off sunglasses",
+  "shop_now": "Shop now",
+  "explore": "Explore",
+
+  "account": "Account",
+  "my_prescriptions": "My prescriptions & measurements",
+  "help_and_support": "Help & support",
+  "about_us": "About us",
+  "addresses": "Addresses",
+  "logout": "Logout",
+  "coming_soon": "Coming soon"
 }
