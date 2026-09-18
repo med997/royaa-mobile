@@ -9,9 +9,9 @@ import '../storage/secure_storage.dart';
 const _envBaseUrl = String.fromEnvironment('API_BASE_URL');
 
 String get _resolvedBaseUrl {
-  if (_envBaseUrl.isNotEmpty) return _envBaseUrl;
-  if (!kIsWeb && Platform.isAndroid) return 'http://10.0.2.2:3000';
-  return 'http://localhost:3000';
+  // if (_envBaseUrl.isNotEmpty) return _envBaseUrl;
+  if (!kIsWeb && Platform.isAndroid) return 'http://192.168.8.114:3000';
+  return 'http://192.168.8.114:3000';
 }
 
 final dioProvider = Provider<Dio>((ref) {
