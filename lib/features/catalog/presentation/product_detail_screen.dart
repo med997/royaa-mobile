@@ -10,6 +10,9 @@ import '../../cart/application/cart_controller.dart';
 import '../../favorites/application/favorites_controller.dart';
 import '../../reviews/presentation/reviews_section.dart';
 import '../application/catalog_providers.dart';
+import '../domain/product.dart';
+import 'product_3d_screen.dart';
+import 'product_gallery_screen.dart';
 
 final _selectedVariantProvider = StateProvider.autoDispose.family<String?, String>((ref, productId) => null);
 
@@ -46,9 +49,14 @@ class ProductDetailScreen extends ConsumerWidget {
                   ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
-                  background: product.images.isNotEmpty
-                      ? CachedNetworkImage(imageUrl: product.images.first.url, fit: BoxFit.cover)
-                      : Container(color: AppColors.fieldFill),
+                  background: GestureDetector(
+                    onTap: product.images.isEmpty
+                        ? null
+                        : () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ProductGalleryScreen(product: product))),
+                    child: product.images.isNotEmpty
+                        ? CachedNetworkImage(imageUrl: product.images.first.url, fit: BoxFit.cover)
+                        : Container(color: AppColors.fieldFill),
+                  ),
                 ),
               ),
               SliverToBoxAdapter(
@@ -93,7 +101,16 @@ class ProductDetailScreen extends ConsumerWidget {
                               ),
                           ],
                         ),
-                      const SizedBox(height: 18),
+                      if (product.images.isNotEmpty)
+                        Align(
+                          alignment: AlignmentDirectional.centerStart,
+                          child: TextButton.icon(
+                            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => Product3dScreen(product: product))),
+                            icon: const Icon(Icons.threed_rotation, size: 16),
+                            label: Text('preview_3d'.tr()),
+                          ),
+                        ),
+                      const SizedBox(height: 10),
                       if (product.widthMm != null)
                         Container(
                           padding: const EdgeInsets.symmetric(vertical: 14),
@@ -121,9 +138,7 @@ class ProductDetailScreen extends ConsumerWidget {
                                       productId: product.id,
                                       variantId: selectedVariantId,
                                     );
-                                if (context.mounted) {
-                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('added_to_cart'.tr())));
-                                }
+                                if (context.mounted) _showAddedToCartSheet(context, product, name);
                               },
                               child: Text('add_to_cart'.tr()),
                             ),
@@ -144,6 +159,52 @@ class ProductDetailScreen extends ConsumerWidget {
       ),
     );
   }
+}
+
+void _showAddedToCartSheet(BuildContext context, Product product, String name) {
+  showModalBottomSheet(
+    context: context,
+    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+    builder: (context) => Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              const CircleAvatar(radius: 22, backgroundColor: Color(0xFFE5EFE9), child: Icon(Icons.check, color: AppColors.green)),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('added_to_cart'.tr(), style: const TextStyle(fontWeight: FontWeight.bold)),
+                    Text(name, style: const TextStyle(color: AppColors.muted, fontSize: 12)),
+                  ],
+                ),
+              ),
+              if (product.images.isNotEmpty)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: CachedNetworkImage(imageUrl: product.images.first.url, width: 48, height: 48, fit: BoxFit.cover),
+                ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          FilledButton(
+            style: FilledButton.styleFrom(backgroundColor: AppColors.red),
+            onPressed: () {
+              Navigator.pop(context);
+              context.push('/cart');
+            },
+            child: Text('view_cart'.tr()),
+          ),
+          const SizedBox(height: 8),
+          OutlinedButton(onPressed: () => Navigator.pop(context), child: Text('continue_shopping'.tr())),
+        ],
+      ),
+    ),
+  );
 }
 
 class _Measure extends StatelessWidget {

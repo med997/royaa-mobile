@@ -95,6 +95,25 @@ class _CartBody extends ConsumerWidget {
             child: Column(
               children: [
                 Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          prefixIcon: const Icon(Icons.confirmation_number_outlined, size: 18),
+                          hintText: 'discount_code'.tr(),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('invalid_code'.tr()))),
+                      child: Text('apply'.tr()),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('subtotal'.tr(), style: const TextStyle(fontSize: 15, color: AppColors.muted)),

@@ -15,6 +15,16 @@
   "verify": "تحقق ومتابعة",
   "otp_sent_to": "أرسلنا رمزاً إلى",
   "otp_code": "رمز التحقق",
+  "welcome_back": "مرحباً بعودتك",
+  "login_subtitle": "ادخل إلى حسابك لمتابعة طلباتك ومقاساتك المحفوظة.",
+  "forgot_password": "نسيت كلمة المرور؟",
+  "or_continue_with": "أو أكمل باستخدام",
+  "enter_verification_code": "أدخل رمز التحقق",
+  "resend_in": "إعادة الإرسال خلال",
+  "resend_code": "إعادة إرسال الرمز",
+  "register_subtitle": "بيانات بسيطة لتجربة أكثر تخصيصاً.",
+  "agree_terms": "أوافق على الشروط وسياسة الخصوصية",
+  "accept_terms_required": "يرجى الموافقة على الشروط للمتابعة",
 
   "welcome": "مرحباً",
   "all": "الكل",
@@ -104,5 +114,43 @@
   "about_us": "من نحن",
   "addresses": "العناوين",
   "logout": "تسجيل الخروج",
-  "coming_soon": "قريباً"
+  "coming_soon": "قريباً",
+
+  "search_hint": "ابحث عن إطار أو ماركة",
+  "results_found": "نتيجة",
+  "no_results": "لا توجد نتائج",
+
+  "preview_3d": "معاينة 360°",
+  "drag_to_rotate": "اسحب لتدوير الإطار",
+
+  "view_cart": "عرض السلة",
+  "continue_shopping": "متابعة التسوق",
+
+  "discount_code": "أدخل كود الخصم",
+  "apply": "تطبيق",
+  "invalid_code": "الكود غير صالح",
+
+  "support_title": "دعم رؤية",
+  "online_now": "● متصل الآن",
+  "type_message": "اكتب رسالتك...",
+
+  "about_tagline": "نرى التفاصيل التي تهمك",
+  "about_body": "نقدّم تجربة سهلة لاختيار النظارات الأصلية وتجربتها رقمياً، مع دعم واضح قبل وبعد الشراء.",
+  "contact_us": "تواصل معنا",
+  "email": "البريد الإلكتروني",
+  "our_branches": "فروعنا",
+  "branches_hint": "اعرض المواقع وساعات العمل",
+
+  "face_measurement": "قياس الوجه",
+  "prescription": "الوصفة الطبية",
+  "face_measurement_title": "ضع وجهك داخل الإطار",
+  "face_measurement_hint": "سنستخدم القياس لاقتراح المقاس وشكل النظارة الأنسب. لن نحفظ صورتك دون إذنك.",
+  "start_measurement": "ابدأ القياس",
+  "prescription_hint": "ارفع الوصفة لمراجعتها قبل التصنيع.",
+  "upload_prescription": "ارفع صورة أو PDF",
+  "sph_right": "SPH يمين",
+  "cyl_right": "CYL يمين",
+  "sph_left": "SPH يسار",
+  "cyl_left": "CYL يسار",
+  "pd_distance": "PD · المسافة بين البؤبؤين"
 }

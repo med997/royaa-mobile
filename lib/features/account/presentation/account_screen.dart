@@ -47,10 +47,10 @@ class AccountScreen extends ConsumerWidget {
           const SizedBox(height: 12),
           _MenuTile(icon: Icons.receipt_long_outlined, label: 'my_orders'.tr(), onTap: () => context.push('/orders')),
           _MenuTile(icon: Icons.location_on_outlined, label: 'addresses'.tr(), onTap: () => context.push('/addresses')),
-          _MenuTile(icon: Icons.description_outlined, label: 'my_prescriptions'.tr(), onTap: () => _comingSoon(context)),
+          _MenuTile(icon: Icons.description_outlined, label: 'my_prescriptions'.tr(), onTap: () => context.push('/measurements')),
           _MenuTile(icon: Icons.notifications_outlined, label: 'notifications'.tr(), onTap: () => context.push('/notifications')),
-          _MenuTile(icon: Icons.chat_bubble_outline, label: 'help_and_support'.tr(), onTap: () => _comingSoon(context)),
-          _MenuTile(icon: Icons.info_outline, label: 'about_us'.tr(), onTap: () => _comingSoon(context)),
+          _MenuTile(icon: Icons.chat_bubble_outline, label: 'help_and_support'.tr(), onTap: () => context.push('/support')),
+          _MenuTile(icon: Icons.info_outline, label: 'about_us'.tr(), onTap: () => context.push('/about')),
           const SizedBox(height: 12),
           _MenuTile(
             icon: Icons.logout,
@@ -60,10 +60,6 @@ class AccountScreen extends ConsumerWidget {
         ],
       ),
     );
-  }
-
-  void _comingSoon(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('coming_soon'.tr())));
   }
 }
 

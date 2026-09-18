@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/about/presentation/about_screen.dart';
 import '../features/account/presentation/account_screen.dart';
 import '../features/addresses/presentation/addresses_screen.dart';
 import '../features/ar_tryon/presentation/ar_tryon_screen.dart';
@@ -12,10 +13,13 @@ import '../features/cart/presentation/cart_screen.dart';
 import '../features/catalog/presentation/product_detail_screen.dart';
 import '../features/checkout/presentation/checkout_screen.dart';
 import '../features/favorites/presentation/favorites_screen.dart';
+import '../features/measurements/presentation/measurements_screen.dart';
 import '../features/notifications/presentation/notifications_screen.dart';
 import '../features/orders/presentation/order_detail_screen.dart';
 import '../features/orders/presentation/orders_list_screen.dart';
+import '../features/search/presentation/search_screen.dart';
 import '../features/splash/presentation/auth_gate.dart';
+import '../features/support/presentation/support_chat_screen.dart';
 import 'main_shell.dart';
 
 const _authRoutes = {'/login', '/register', '/otp'};
@@ -65,6 +69,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/notifications', builder: (context, state) => const NotificationsScreen()),
       GoRoute(path: '/addresses', builder: (context, state) => const AddressesScreen()),
+      GoRoute(path: '/search', builder: (context, state) => const SearchScreen()),
+      GoRoute(path: '/measurements', builder: (context, state) => const MeasurementsScreen()),
+      GoRoute(path: '/support', builder: (context, state) => const SupportChatScreen()),
+      GoRoute(path: '/about', builder: (context, state) => const AboutScreen()),
     ],
   );
 });
