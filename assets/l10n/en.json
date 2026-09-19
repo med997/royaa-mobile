@@ -15,6 +15,16 @@
   "verify": "Verify",
   "otp_sent_to": "We sent a code to",
   "otp_code": "OTP code",
+  "welcome_back": "Welcome back",
+  "login_subtitle": "Sign in to continue your orders and saved measurements.",
+  "forgot_password": "Forgot password?",
+  "or_continue_with": "Or continue with",
+  "enter_verification_code": "Enter verification code",
+  "resend_in": "Resend in",
+  "resend_code": "Resend code",
+  "register_subtitle": "Simple details for a more personalized experience.",
+  "agree_terms": "I agree to the Terms and Privacy Policy",
+  "accept_terms_required": "Please accept the terms to continue",
 
   "welcome": "Welcome",
   "all": "All",
@@ -103,5 +113,43 @@
   "about_us": "About us",
   "addresses": "Addresses",
   "logout": "Logout",
-  "coming_soon": "Coming soon"
+  "coming_soon": "Coming soon",
+
+  "search_hint": "Search for a frame or brand",
+  "results_found": "results found",
+  "no_results": "No results",
+
+  "preview_3d": "360° preview",
+  "drag_to_rotate": "Drag to rotate the frame",
+
+  "view_cart": "View cart",
+  "continue_shopping": "Continue shopping",
+
+  "discount_code": "Enter discount code",
+  "apply": "Apply",
+  "invalid_code": "Invalid code",
+
+  "support_title": "Royaa support",
+  "online_now": "● Online now",
+  "type_message": "Type your message...",
+
+  "about_tagline": "We see the details that matter to you",
+  "about_body": "We make it easy to choose authentic eyewear and try it digitally, with clear support before and after your purchase.",
+  "contact_us": "Contact us",
+  "email": "Email",
+  "our_branches": "Our branches",
+  "branches_hint": "View locations and working hours",
+
+  "face_measurement": "Face measurement",
+  "prescription": "Prescription",
+  "face_measurement_title": "Position your face inside the frame",
+  "face_measurement_hint": "We'll use the measurement to suggest the best size and shape. Your photo is never saved without permission.",
+  "start_measurement": "Start measurement",
+  "prescription_hint": "Upload your prescription for review before manufacturing.",
+  "upload_prescription": "Upload a photo or PDF",
+  "sph_right": "SPH right",
+  "cyl_right": "CYL right",
+  "sph_left": "SPH left",
+  "cyl_left": "CYL left",
+  "pd_distance": "PD · pupillary distance"
 }
