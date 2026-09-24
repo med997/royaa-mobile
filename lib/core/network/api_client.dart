@@ -10,8 +10,8 @@ const _envBaseUrl = String.fromEnvironment('API_BASE_URL');
 
 String get _resolvedBaseUrl {
 //   if (_envBaseUrl.isNotEmpty) return _envBaseUrl;
-  if (!kIsWeb && Platform.isAndroid) return 'http://192.168.8.114:3000';
-  return 'http://192.168.8.114:3000';
+  if (!kIsWeb && Platform.isAndroid) return 'https://royaabackend-r6lt4hfv.b4a.run';
+  return 'https://royaabackend-r6lt4hfv.b4a.run';
 }
 
 final dioProvider = Provider<Dio>((ref) {
